@@ -8,7 +8,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 public class OmokEngineApplication {
 
 	public static void main(String[] args) {
-		ConfigurableApplicationContext run = SpringApplication.run(OmokEngineApplication.class, args);
+		SpringApplication.run(OmokEngineApplication.class, args);
 	}
 
 }
