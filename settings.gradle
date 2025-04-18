@@ -11,4 +11,4 @@ plugins {
 }
 
 rootProject.name = 'omok'
-include 'engine'
+include 'engine', 'users'
