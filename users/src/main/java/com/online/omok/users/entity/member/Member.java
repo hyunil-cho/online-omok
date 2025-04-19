@@ -1,9 +1,12 @@
 package com.online.omok.users.entity.member;
 
+import com.online.omok.users.entity.member.role.Role;
 import com.online.omok.users.entity.organization.Organization;
 import com.online.omok.users.entity.UserGameStatus;
 import com.online.omok.users.entity.base.BaseTimeEntity;
 import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
@@ -12,15 +15,15 @@ import jakarta.persistence.*;
 public class Member extends BaseTimeEntity {
 
     @Id
-    @Column(name = "ID")
+    @Column(name = "member_id")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @Column(name = "NAME")
     private String userName;
 
-    @Enumerated(EnumType.STRING)
-    private RoleType roleType;
+    @OneToMany(mappedBy = "member")
+    private List<MemberRoleAssignment> roles;
 
     @OneToOne(cascade = CascadeType.ALL)
     private UserGameStatus gameStatus;
@@ -38,17 +41,18 @@ public class Member extends BaseTimeEntity {
         return userName;
     }
 
-    public RoleType getRoleType() {
-        return roleType;
-    }
 
     public void setUserName(String userName) {
         this.userName = userName;
     }
 
-    public void setRoleType(RoleType roleType) {
-        this.roleType = roleType;
-    }
+//    public List<Role> getRoleType() {
+//        return roleType;
+//    }
+//
+//    public void setRoleType(List<Role> roleType) {
+//        this.roleType = roleType;
+//    }
 
     public void setOrganization(Organization organization) {
         this.organization = organization;
