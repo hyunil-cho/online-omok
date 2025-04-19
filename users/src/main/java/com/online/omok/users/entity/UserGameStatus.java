@@ -1,11 +1,12 @@
 package com.online.omok.users.entity;
 
 
+import com.online.omok.users.entity.base.BaseTimeEntity;
 import jakarta.persistence.*;
 
 @Entity
 @Table(name = "user_game_status")
-public class UserGameStatus {
+public class UserGameStatus extends BaseTimeEntity {
 
     @Id
     private long userId;
