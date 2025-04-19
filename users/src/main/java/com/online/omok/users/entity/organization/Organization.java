@@ -1,6 +1,7 @@
-package com.online.omok.users.entity;
+package com.online.omok.users.entity.organization;
 
 import com.online.omok.users.entity.base.BaseTimeEntity;
+import com.online.omok.users.entity.member.Member;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;

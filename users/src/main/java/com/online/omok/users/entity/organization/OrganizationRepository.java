@@ -1,4 +1,4 @@
-package com.online.omok.users.entity;
+package com.online.omok.users.entity.organization;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

@@ -1,12 +1,14 @@
-package com.online.omok.users.entity;
+package com.online.omok.users.entity.member;
 
+import com.online.omok.users.entity.organization.Organization;
+import com.online.omok.users.entity.UserGameStatus;
 import com.online.omok.users.entity.base.BaseTimeEntity;
 import jakarta.persistence.*;
 
-import java.util.Date;
-
 @Entity
+@Inheritance(strategy = InheritanceType.JOINED)
 @Table(name = "member_info")
+@DiscriminatorColumn
 public class Member extends BaseTimeEntity {
 
     @Id
